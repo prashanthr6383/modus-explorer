@@ -2,6 +2,53 @@
   text-align: center;
 }
 
+.container-main {
+  padding: 0px 10px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+  max-width: 90%;
+  margin: auto;
+}
+
+.flex-contain {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  border-right: 1px dashed #000;
+  padding-top: 50px;
+  
+}
+
+.message_body {
+  font-size: 14px;
+  padding: 0px 10px;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.message_body pre {
+  background-color: black; /* Black background */
+  color: white; /* White text color */
+  padding: 15px; /* Padding inside the pre block */
+  border-radius: 5px; /* Rounded corners */
+  font-family: Consolas, Monaco, "Courier New", monospace; /* Monospaced font for code */
+  overflow-x: auto; /* Allow horizontal scrolling if the code is too wide */
+  white-space: pre-wrap; /* Wrap long lines in the pre tag */
+  margin: 10px 0; /* Add some margin around the pre block */
+}
+
+/* .message_body code {
+  color: #f8f8f2; 
+  background-color: #272822; 
+  padding: 3px 6px;
+  border-radius: 3px;
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
