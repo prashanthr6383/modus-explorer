@@ -10,11 +10,11 @@ export const GetMessages = async (blob_data, token, messageData) => {
         message: messageData,
         stream: false,
         model_id: "gpt-4o",
-        session_id: "335ae761-39ce-4aa0-be05-b299e625a786",
+        session_id: token.session,
       },
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token.token}`,
           "Content-Type": "application/json",
         },
       }

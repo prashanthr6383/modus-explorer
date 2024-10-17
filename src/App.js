@@ -4,6 +4,7 @@ import FileUploader from "./Api/FileUpload/fileUploader";
 import { GetMessages } from "./Api/getMessageData/getMessageData";
 import { defineCustomElements } from "@trimble-oss/modus-web-components/loader";
 import "./App.css";
+import GetSession from "./Api/GetToken/getSession";
 
 function MyComponent() {
   const [fileData, setFileData] = useState(null);
@@ -16,7 +17,8 @@ function MyComponent() {
 
     const fetchToken = async () => {
       const fetchedToken = await GetToken();
-      setToken(fetchedToken);
+      const fetchedSession = await GetSession(fetchedToken);
+      setToken({ token: fetchedToken, session: fetchedSession });
     };
 
     fetchToken();
@@ -25,13 +27,13 @@ function MyComponent() {
   useEffect(() => {
     const fetchMessages = async () => {
       if (fileData && token) {
-        const messages = await GetMessages(fileData, token , messageText);
+        const messages = await GetMessages(fileData, token, messageText);
         setMessageData(messages);
       }
     };
 
     fetchMessages();
-  }, [fileData, token]);
+  }, [fileData, token, messageText]);
 
   const getBlobData = (data, message) => {
     setFileData(data);

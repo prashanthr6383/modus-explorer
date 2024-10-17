@@ -29,11 +29,11 @@ const FileUploader = ({ getBlobData, accessToken }) => {
 
     try {
       const response = await axios.post(
-        `https://eu1.api.trimble.com/trimbledeveloperprogram/assistants/v1/agents/modus-explorer/sessions/335ae761-39ce-4aa0-be05-b299e625a786/images`,
+        `https://eu1.api.trimble.com/trimbledeveloperprogram/assistants/v1/agents/modus-explorer/sessions/${accessToken.session}/images`,
         formData,
         {
           headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken.token}`,
             "Content-Type": "multipart/form-data",
           },
         }
